@@ -3,6 +3,8 @@ console.log('welcome')
 const todoInput = document.querySelector('.todo-input')
 const todoBtn = document.querySelector('.todo-btn')
 const todoResult = document.querySelector('.todo-result')
+const todoAction = document.querySelector('.action-div')
+
 
 function addTodo(e)
 {
@@ -45,6 +47,24 @@ function addTodo(e)
     console.log(todoInput.value)
     todoInput.value=''
 
+    
+
+
+
+    
 }
 
+
+function todoToggle(e){
+    console.log('in toggle')
+    const item =e.target
+    if (item.classList[1] == 'fa-check'){
+        console.log('completed')
+    }
+    else if (item.classList[1] == 'fa-trash'){
+        console.log('delet')
+}
+
+}
+todoResult.addEventListener('click',todoToggle)
 todoBtn.addEventListener('click',addTodo)
