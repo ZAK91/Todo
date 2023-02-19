@@ -60,9 +60,14 @@ function todoToggle(e){
     const item =e.target
     if (item.classList[1] == 'fa-check'){
         console.log('completed')
-    }
+       
+     const taskLi = item.parentElement.parentElement.parentElement
+     taskLi.childNodes[0].classList.toggle('complete')
+    }   
     else if (item.classList[1] == 'fa-trash'){
         console.log('delet')
+        const taskLi = item.parentElement.parentElement.parentElement
+       taskLi.childNodes[0].classList.toggle('delet')
 }
 
 }
